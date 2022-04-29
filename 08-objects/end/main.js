@@ -21,9 +21,18 @@ const mini = {
     return `${this.company} ${this.model}`
   },
   test: function(){
-    function test2(){
-      return this.year
-    }
+    // this se nanaša na objekt mini
+    console.log(this.year)
+
+    // function test2(){
+    //   // this se nanaša na globalni objekt
+    //   return this.year
+    // }
+
+    // arrow function
+    const test2 = () => this.year
+
+
     console.log(test2())
   }
 }
@@ -43,7 +52,7 @@ console.log(desc);
 // const getDesc2 = mini.getDesc
 // const desc2 = getDesc2();
 // console.log(desc2)
-// mini.test()
+ mini.test()
 
 // Ustvarite graditeljsko funkcijo (constuctor function) imenovano Car za ustvarjanje objekta, ki ima iste lastnosti in metode kot prej ustvarjen objekt 
 function Car(company, model, year, color, features){
@@ -81,6 +90,41 @@ console.log(ime.length)
 console.log(ime.__proto__)
 
 
+// // Izpišite vse lastnosti ustvarjenih objektov
+// // for in 
+// for (const prop in fabia) {
+//   if (fabia.hasOwnProperty(prop)) {
+//     console.log(prop, ': ', fabia[prop])
+//   }
+// }
 
-// Izpišite vse lastnosti ustvarjenih objektov
-// Ustvarite kopijo objekta in mu dodajte novo lastnost
+// // Izpiši samo imena lastnosti objekta
+// const names = Object.keys(fabia);
+// console.log(names)
+
+// // Izpiši samo vrednosti lastnosti objekta
+// const values = Object.values(fabia);
+// console.log(values)
+
+// Izpiši ime in pripadajočo vrednost lastnosti objekta
+const ent = Object.entries(fabia);
+
+for (let [name, value] of ent) {
+  console.log(`Ime lastnosti: ${name}, vrednost lastnosti: ${value}`)
+}
+
+// Reasign as reference
+const superFabia = fabia;
+console.log(superFabia === fabia)
+
+superFabia.year = 2020;
+
+console.log(fabia.year)
+console.log(superFabia.year)
+
+// Copying object
+const superDuperFabia = { ...fabia }
+superDuperFabia.year = 2050;
+console.log(fabia.year)
+console.log(superDuperFabia.year)
+
