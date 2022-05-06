@@ -29,4 +29,7 @@ h1.style.color = 'black';
 h1.style.textShadow = '5px 5px 0 #fff';
 
 // Posredno spreminjanje CSS lastnosti z dodeljevanjem razredov 
-h1.classList.add('active')
+h1.classList.add('active') // dodajanje
+// .remove() odstranjevanje
+// .toggle() preklaplanje
+
