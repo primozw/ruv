@@ -1,5 +1,8 @@
 'use strict';
 
+// JS EVENTS
+// https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+
 const btn1 = document.querySelector('#btn-1');
 
 btn1.addEventListener('click', ()=>console.log('Click na btn!'), true)
