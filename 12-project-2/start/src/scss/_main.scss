@@ -1,0 +1,15 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: $body-background-color;
+  color: $foreground-color;
+  font-family: $font-family;
+}
+.container {
+  width:90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+

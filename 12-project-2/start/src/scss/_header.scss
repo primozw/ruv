@@ -1,0 +1,27 @@
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: $space-m 0 $space-s;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('../images/design/schedule_black_24dp.svg');
+    background-size: cover;
+    margin-right: 0.25em;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  span {
+    color: $primary-color;
+  }
+}

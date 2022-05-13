@@ -1,0 +1,8 @@
+:root {
+  touch-action: pan-x pan-y;
+  height: 100% 
+}
+
+*::selection {
+  background-color: rgba($primary-color,0.5);
+}

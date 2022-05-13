@@ -1,0 +1,91 @@
+$input-height: 3.5rem;
+
+label {
+  color: $medium-gray;
+  font-size: 0.85rem;
+  padding-left: 5px;
+}
+
+input {
+  font-size: 1.1rem;
+  font-weight: 400;
+  width:100%;
+  height: $input-height;
+  background-color:$white;
+  border: 2px solid transparent;
+  border-radius: $border-radius 0 0 $border-radius;
+  padding: 0 12px;
+  font-family: $font-family;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-appearance: none;
+  
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+  &:focus ~ label {
+    color: $primary-color;
+    font-weight: 600;
+  }
+}
+
+.btn--add {
+  background: $accent-color;
+  color: $white;
+  cursor: pointer;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  border-radius: 0 $border-radius $border-radius 0;
+  width: $input-height;
+  height: $input-height;
+
+  &:hover, &:focus, &:focus-visible {
+    background:rgba($accent-color, 0.95);
+    outline: none;
+  }
+  &:active {
+    transform: scale(0.99);
+  }
+  path {
+    fill: #fff;
+  }
+}
+
+.btn--delete-all {
+  text-decoration: underline;
+  display: block;
+  opacity: 0;
+  transition: $opacity-transition;
+  
+  &:hover {
+    color: $medium-gray;
+  }
+  &:active {
+    color: $dark-gray;
+  }
+  &--active {
+    opacity: 1;
+  }
+}
+
+
+.task-form {
+  padding: $space-m 0 0;
+  position: sticky;
+  top: 0;
+  background-color: $light-gray;
+  form {
+    display: flex;
+  }
+  p {
+    margin-bottom: $space-s;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    
+    &:nth-child(1){
+      flex-grow: 1;
+    }
+  }
+}
+

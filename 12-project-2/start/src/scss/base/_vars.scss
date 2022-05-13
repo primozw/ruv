@@ -1,0 +1,30 @@
+/**
+ * Variables
+*/
+
+/* Colour palette */
+$black: #000;
+$white: #fff;
+$light-gray: #f1f1f1;
+$medium-gray: #707070;
+$dark-gray: #4a4a4a;
+
+$primary-color: #01ACB6;
+
+$body-background-color: $light-gray;
+$foreground-color: $black;
+$accent-color:$primary-color;
+$link: $primary-color;
+
+/* Typography */
+$font-family: 'Poppins', sans-serif;
+
+/* Spaces */
+$space-xs: 0.5rem;
+$space-s: 1rem;
+$space-m: 2rem;
+$space-l: 4rem;
+
+$border-radius: 5px;
+
+$opacity-transition: opacity 0.25s ease-in;
