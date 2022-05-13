@@ -1,0 +1,27 @@
+.btn {
+  width: 6rem;
+  height: 6rem;
+  opacity: 0;
+  transition: all ease-out 0.5s;
+  svg {
+    width: 100%;
+    opacity: 0.8;
+  }
+  &:hover svg {
+    opacity:  1;
+  }
+  & .pause {
+    opacity: 0;
+    transition: all ease-in-out 0.25s;
+  }
+  &.active .play {
+    opacity: 0;
+    transition: all ease-in-out 0.25s;
+  }
+  &.active .pause {
+    opacity: 1;
+  }
+}
+
+
+
