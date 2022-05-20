@@ -107,18 +107,6 @@ module.exports = {
       verbose: true,
       cleanOnceBeforeBuildPatterns: ['**/*', '!stats.json'],
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(environment.paths.source, 'images', 'content'),
-          to: path.resolve(environment.paths.output, 'images', 'content'),
-          toType: 'dir',
-          globOptions: {
-            ignore: ['*.DS_Store', 'Thumbs.db'],
-          },
-        },
-      ],
-    }),
     new FaviconsWebpackPlugin({
       logo: './src/images/logo.svg', // svg works too!
       mode: 'webapp', // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
