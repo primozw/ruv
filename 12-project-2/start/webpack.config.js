@@ -9,7 +9,6 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
@@ -55,7 +54,7 @@ module.exports = {
           },
         },
         generator: {
-          filename: 'images/design/[name].[hash:6][ext]',
+          filename: 'images/[name].[hash:6][ext]',
         },
       },
       {
@@ -67,16 +66,12 @@ module.exports = {
           },
         },
         generator: {
-          filename: 'images/design/[name].[hash:6][ext]',
+          filename: 'images/[name].[hash:6][ext]',
         },
       },
     ],
   },
   plugins: [
-    // strip all locales except “en”, “sl”
-    new MomentLocalesPlugin({
-      localesToKeep: ['sl'],
-    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name][hash].css',
     }),
@@ -107,28 +102,34 @@ module.exports = {
       verbose: true,
       cleanOnceBeforeBuildPatterns: ['**/*', '!stats.json'],
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(environment.paths.source, 'images'),
+          to: path.resolve(environment.paths.output, 'images'),
+          toType: 'dir',
+          globOptions: {
+            ignore: ['*.DS_Store', 'Thumbs.db'],
+          },
+        },
+      ],
+    }),
     new FaviconsWebpackPlugin({
       logo: './src/images/logo.svg', // svg works too!
-      mode: 'webapp', // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
-      devMode: 'webapp', // optional can be 'webapp' or 'light' - 'light' by default 
+      mode: 'light', // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
+      devMode: 'light', // optional can be 'webapp' or 'light' - 'light' by default 
       favicons: {
-        appName: 'moj-opomnik',
-        appDescription: 'Aplikacija za shranjevanje opravil',
+        appName: 'simple-animation',
+        appDescription: 'Simple animation for learning JS',
         developerName: 'Primoz Weingerl',
         developerURL: null, // prevent retrieving from the nearest package.json
         background: '#fff',
         theme_color: '#01ACB6',
         icons: {
           coast: false,
-          yandex: false
-        }
-      }
-    }),
-    new WorkboxPlugin.GenerateSW({
-      // these options encourage the ServiceWorkers to get in there fast
-      // and not allow any straggling "old" SWs to hang around
-      clientsClaim: true,
-      skipWaiting: true,
+          yandex: false,
+        },
+      },
     })].concat(htmlPluginEntries),
   target: 'web',
 };

@@ -1,8 +1,8 @@
 {
   "author": "Primoz Weingerl",
-  "name": "moj-opomnik",
+  "name": "to-do-app",
   "version": "1.0.0",
-  "description": "Simple reminder app",
+  "description": "To-do App",
   "homepage": "",
   "browserslist": [
     "last 2 versions",
@@ -28,7 +28,6 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^9.0.0",
     "mini-css-extract-plugin": "^2.4.4",
-    "moment-locales-webpack-plugin": "^1.2.0",
     "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
     "sass": "^1.43.4",
@@ -43,7 +42,7 @@
     "workbox-webpack-plugin": "^6.4.2"
   },
   "engines": {
-    "node": "^12 || >=14"
+    "node": "^17"
   },
   "license": "MIT",
   "private": false,
